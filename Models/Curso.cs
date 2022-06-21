@@ -8,19 +8,15 @@ namespace LrCursosAPI.Models
         public int CursoId { get; set; }
 
         [StringLength(100)]
+        [Required]
         public string CursoNome { get; set; } = string.Empty;
 
+        [Required]
         public string ImagemUrl { get; set; } = string.Empty;
 
         [StringLength(200)]
         public string Descricao { get; set; } = string.Empty ;
 
-
-        public decimal Preco { get; set; }
-
-        public int ConteudoId { get; set; }
-
         public IEnumerable<Conteudo> Conteudos { get; set; } = new List<Conteudo>();
-
     }
 }

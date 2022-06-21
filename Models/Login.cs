@@ -14,5 +14,8 @@ namespace LrCursosAPI.Models
         [Required]
         [StringLength(8, ErrorMessage ="A senha deve ter oito dígitos")]
         public string Password { get; set; }
+
+
+
     }
 }
