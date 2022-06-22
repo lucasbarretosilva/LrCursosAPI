@@ -86,14 +86,9 @@ namespace LrCursosAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<Curso>> PostCurso(Curso curso)
         {
-          if (_context.Curso == null)
-          {
-              return Problem("Entity set 'LrCursosAPIContext.Curso'  is null.");
-          }
-            _context.Curso.Add(curso);
+            await _context.Curso.AddAsync(curso);
             await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetCurso", new { id = curso.CursoId }, curso);
+            return Ok();
         }
 
         // DELETE: api/Cursos/5

@@ -8,10 +8,10 @@ namespace LrCursosAPI.Models
         public int CursoId { get; set; }
 
         [StringLength(100)]
-        [Required]
+      
         public string CursoNome { get; set; } = string.Empty;
 
-        [Required]
+      
         public string ImagemUrl { get; set; } = string.Empty;
 
         [StringLength(200)]
