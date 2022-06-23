@@ -29,7 +29,7 @@ namespace LrCursosAPI.Controllers
           {
               return NotFound();
           }
-            return await _context.Curso.ToListAsync();
+            return await _context.Curso.Include(x=>x.Conteudos).ToListAsync();
         }
 
         // GET: api/Cursos/5
