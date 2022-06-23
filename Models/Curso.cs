@@ -17,6 +17,8 @@ namespace LrCursosAPI.Models
         [StringLength(200)]
         public string Descricao { get; set; } = string.Empty ;
 
+        public string Duracao { get; set; } = string.Empty ;
+
         public IEnumerable<Conteudo> Conteudos { get; set; } = new List<Conteudo>();
     }
 }
