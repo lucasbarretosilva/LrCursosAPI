@@ -88,7 +88,7 @@ namespace LrCursosAPI.Controllers
         {
             await _context.Curso.AddAsync(curso);
             await _context.SaveChangesAsync();
-            return Ok();
+            return Ok(curso);
         }
 
         // DELETE: api/Cursos/5

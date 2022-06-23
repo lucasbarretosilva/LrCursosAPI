@@ -50,6 +50,24 @@ namespace LrCursosAPI.Controllers
             return conteudo;
         }
 
+        // GET: api/Conteudos/curso/5
+        [HttpGet("curso/{cursoId}")]
+        public async Task<ActionResult<List<Conteudo>>> GetConteudoPorCursoId(int cursoId)
+        {
+            if (_context.Conteudo == null)
+            {
+                return NotFound();
+            }
+            var conteudos = await _context.Conteudo.Where(x => x.CursoId == cursoId).ToListAsync();
+
+            if (conteudos == null)
+            {
+                return NotFound();
+            }
+
+            return conteudos;
+        }
+
         // PUT: api/Conteudos/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
