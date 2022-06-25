@@ -13,5 +13,7 @@
         public  string Senha { get; set; } = string.Empty;
 
         public bool IsManager { get; set; }
+
+        public bool Liberado { get; set; }
     }
 }

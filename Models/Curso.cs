@@ -19,6 +19,8 @@ namespace LrCursosAPI.Models
 
         public string Duracao { get; set; } = string.Empty ;
 
+        public bool Visto { get; set; }
+
         public IEnumerable<Conteudo> Conteudos { get; set; } = new List<Conteudo>();
     }
 }

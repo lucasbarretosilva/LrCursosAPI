@@ -17,5 +17,7 @@ namespace LrCursosAPI.Models
         public int CursoId { get; set; }
 
         public Curso? Curso { get; set; }
+
+        public bool Visto { get; set; }
     }
 }
