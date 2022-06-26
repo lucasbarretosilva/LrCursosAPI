@@ -17,5 +17,7 @@ namespace LrCursosAPI.Data
         public DbSet<LrCursosAPI.Models.Curso>? Curso { get; set; }
 
         public DbSet<LrCursosAPI.Models.Conteudo>? Conteudo { get; set; }
+
+        public DbSet<LrCursosAPI.Models.Autenticacao>? Autenticacao { get; set; }
     }
 }
