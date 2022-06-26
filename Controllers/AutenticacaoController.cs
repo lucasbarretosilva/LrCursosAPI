@@ -50,6 +50,24 @@ namespace LrCursosAPI.Controllers
             return autenticacao;
         }
 
+        // GET: api/Autenticacao/teste/123
+        [HttpGet("{email}/{senha}")]
+        public async Task<ActionResult<Autenticacao>> GetAutenticacaoPorEmailESenha(string email, string senha)
+        {
+            if (_context.Autenticacao == null)
+            {
+                return NotFound();
+            }
+            var autenticacao = await _context.Autenticacao.FirstOrDefaultAsync(x => x.Email == email && x.Senha == senha);
+
+            if (autenticacao == null)
+            {
+                return NotFound();
+            }
+
+            return autenticacao;
+        }
+
         // PUT: api/Autenticacao/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
