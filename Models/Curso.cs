@@ -22,5 +22,7 @@ namespace LrCursosAPI.Models
         public bool Visto { get; set; }
 
         public IEnumerable<Conteudo> Conteudos { get; set; } = new List<Conteudo>();
+
+       
     }
 }

@@ -15,5 +15,7 @@
         public bool IsManager { get; set; }
 
         public bool Liberado { get; set; }
+
+        public IEnumerable<ConteudoVisto>? ConteudosVistos { get; set; }
     }
 }

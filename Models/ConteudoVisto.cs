@@ -1,4 +1,5 @@
-﻿namespace LrCursosAPI.Models
+﻿
+namespace LrCursosAPI.Models
 {
     public class ConteudoVisto
     {
@@ -8,7 +9,7 @@
 
         public int ConteudoId { get; set; }
 
-      
+
 
         public Autenticacao? Autenticacao { get; set; }
 
