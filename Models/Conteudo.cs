@@ -19,5 +19,7 @@ namespace LrCursosAPI.Models
         public Curso? Curso { get; set; }
 
         public bool Visto { get; set; }
+
+        public IEnumerable<ConteudoVisto>? ConteudosVistos { get; set; }
     }
 }
