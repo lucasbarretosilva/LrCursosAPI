@@ -37,6 +37,21 @@ namespace LrCursosAPI.Controllers
                 .ToListAsync();
         }
 
+
+        [HttpGet("{AutenticacaoId}")]
+        public async Task<ActionResult<IEnumerable<ConteudoVisto>>> GetConteudoVistoPorUsuario(int autenticacao)
+        {
+
+
+
+            if (_context.ConteudoVisto == null)
+            {
+                return NotFound();
+            }
+            return await _context.ConteudoVisto.Where(x=> x.AutenticacaoId == autenticacao)
+                .ToListAsync();
+        }
+
         // GET: api/ConteudosVistos/5
         [HttpGet("{id}")]
         public async Task<ActionResult<ConteudoVisto>> GetConteudoVisto(int id)
