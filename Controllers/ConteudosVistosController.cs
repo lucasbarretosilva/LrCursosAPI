@@ -38,21 +38,20 @@ namespace LrCursosAPI.Controllers
         }
 
 
-        [HttpGet("{AutenticacaoId}")]
-        public async Task<ActionResult<IEnumerable<ConteudoVisto>>> GetConteudoVistoPorUsuario(int autenticacao)
+        [HttpGet("usuario/{autenticacaoId}")]
+        public async Task<ActionResult<IEnumerable<ConteudoVisto>>> GetConteudoVistoPorUsuario(int autenticacaoId)
         {
-
-
 
             if (_context.ConteudoVisto == null)
             {
                 return NotFound();
             }
-            return await _context.ConteudoVisto.Where(x=> x.AutenticacaoId == autenticacao)
+            return await _context.ConteudoVisto.Where(x=> x.AutenticacaoId == autenticacaoId)
+                .Include(z => z.Conteudo.Curso)
                 .ToListAsync();
         }
 
-        // GET: api/ConteudosVistos/5
+        // GET: api/ConteudosVistos/5 
         [HttpGet("{id}")]
         public async Task<ActionResult<ConteudoVisto>> GetConteudoVisto(int id)
         {
