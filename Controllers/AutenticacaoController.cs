@@ -25,11 +25,12 @@ namespace LrCursosAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Autenticacao>>> GetAutenticacao()
         {
+
           if (_context.Autenticacao == null)
           {
               return NotFound();
           }
-            return await _context.Autenticacao.ToListAsync();
+            return await _context.Autenticacao.Include(x=>x.ConteudosVistos).ToListAsync();
         }
 
         // GET: api/Autenticacao/5

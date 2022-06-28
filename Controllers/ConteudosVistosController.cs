@@ -25,6 +25,9 @@ namespace LrCursosAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ConteudoVisto>>> GetConteudoVisto()
         {
+          
+
+
           if (_context.ConteudoVisto == null)
           {
               return NotFound();
